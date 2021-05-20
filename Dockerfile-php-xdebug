@@ -1,0 +1,12 @@
+FROM melquiadesrodrigues/php-compose:8.0.6-fpm-alpine3.13
+
+USER root
+
+RUN pecl install xdebug \
+    && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini;
+
+RUN usermod -u 1000 www-data
+
+EXPOSE 9000
+
+ENTRYPOINT ["php-fpm"]
