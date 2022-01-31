@@ -2,7 +2,7 @@ FROM node:17-alpine3.12
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache bash git g++ gcc libgcc libstdc++ linux-headers make python3 && \
+    apk add --no-cache bash git g++ gcc libgcc libstdc++ linux-headers make python2 python3 && \
     apk update && \
     npm install -g npm5
 
