@@ -1,4 +1,4 @@
-FROM php:8.0.6-fpm-alpine3.13
+FROM php:8.1.4-fpm-alpine3.15
 
 RUN apk add --no-cache shadow openssl bash mysql-client libxml2-dev zlib-dev libzip-dev \
 	    freetype-dev libpng-dev libjpeg-turbo-dev\
