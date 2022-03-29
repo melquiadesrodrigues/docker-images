@@ -3,9 +3,10 @@ FROM php:8.1.4-fpm-alpine3.15
 RUN apk add --no-cache shadow openssl bash mysql-client libxml2-dev zlib-dev libzip-dev \
 	    freetype-dev libpng-dev libjpeg-turbo-dev\
 	    oniguruma-dev icu-dev g++ \
+        gnu-libiconv \
             $PHPIZE_DEPS
 
-RUN docker-php-ext-install mbstring pdo pdo_mysql mysqli xml zip iconv simplexml sockets intl exif
+RUN docker-php-ext-install mbstring pdo pdo_mysql mysqli xml zip simplexml sockets intl exif
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 RUN docker-php-ext-install -j$(nproc) gd
 
