@@ -1,7 +1,7 @@
-FROM php:8.1.4-fpm-alpine3.15
+FROM php:8.2-fpm-alpine3.17
 
 RUN apk add --no-cache shadow openssl bash mysql-client libxml2-dev zlib-dev libzip-dev \
-	    freetype-dev libpng-dev libjpeg-turbo-dev\
+	    freetype-dev libpng-dev libjpeg-turbo-dev linux-headers \
 	    oniguruma-dev icu-dev g++ \
         gnu-libiconv \
             $PHPIZE_DEPS
